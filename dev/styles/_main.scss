@@ -1,0 +1,168 @@
+// ==|== primary styles =======================================================
+// ============================================================================
+
+// Foundation
+// ----------------------------------------------------------------------------
+html {
+	min-height: 100%;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	color: $hsl_L0;
+}
+body {
+	position: relative;
+	text-align: center;
+	background-color: $hsl_sand;
+/*
+	background-image: url('../img/bg_s2s.jpg');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+*/
+}
+::selection {
+	color: $hsl_L100;
+	background-color: $hsl_L0;
+}
+
+// Transitions
+// ----------------------------------------------------------------------------
+a {
+	transition: all 0.3s ease-in-out;
+}
+svg {
+	transition: fill 0.3s ease-in-out;
+}
+div.loader_overlay {
+	transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+}
+// --- Animations --- \\
+@keyframes animShow {
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
+@keyframes animHide {
+	0%   { opacity: 1; left: 0; }
+	99%  { opacity: 0; left: 0; }
+	100% { opacity: 0; left: -200%; }
+}
+@keyframes anim360 {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+// General Styles
+// ----------------------------------------------------------------------------
+// --- Containers --- \\
+[data-container] {
+	margin-left: auto;
+	margin-right: auto;
+}
+[data-container="width_1170"] {
+	max-width: 117rem;
+}
+// --- SVGs --- \\
+#svgInject {
+	display: none;
+	visibility: hidden;
+}
+.wrap_svg {
+	margin-left: auto;
+	margin-right: auto;
+}
+a.wrap_svg {
+	display: block;
+}
+.wrap_svg svg {
+	width: 100%;
+	height: 100%;
+}
+svg.svg_inline {
+	display: inline; // [viewBox] attribute selector does not work in webkit
+}
+// --- Body Locking --- \\
+html,
+html body {
+	overflow-y: visible;
+}
+html[data-images="waiting"],
+html[data-images="waiting"] body,
+html[data-overlay="visible"],
+html[data-overlay="visible"] body {
+	overflow-y: hidden;
+}
+
+// CSS Loader
+// ----------------------------------------------------------------------------
+div.loader_overlay {
+	position: fixed;
+	z-index: 900;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: $hsl_sand;
+	opacity: 1;
+	overflow: hidden;
+}
+div.loader_overlay div.wrap_svg {
+	position: absolute;
+	z-index: 911;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	width: 4.4rem;
+	height: 4.4rem;
+	animation: anim360 1s linear infinite forwards;
+}
+div.loader_overlay div.wrap_svg svg {
+	fill: $hsl_L0;
+}
+html[data-images="loaded"] div.loader_overlay {
+	opacity: 0; // fade to 0 once images are loaded - JS will remove from DOM
+}
+
+
+// ==|== sections =============================================================
+// ============================================================================
+
+// Articles
+// ----------------------------------------------------------------------------
+main {
+	display: table;
+	table-layout: fixed;
+	padding: 4rem 1.6rem;
+	width: 100%;
+	height: 100vh;
+}
+section {
+	display: table-cell;
+	vertical-align: middle;
+}
+h1 {
+	margin-bottom: 2rem;
+	font-size: 3.2rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+h2 {
+	font-size: 1.6rem;
+	font-weight: 700;
+	line-height: 1.4;
+	text-transform: uppercase;
+}
+h2 a {
+	display: inline-block;
+	white-space: nowrap;
+	color: $hsl_red;
+}
+h2 a:hover {
+	color: $hsl_L20;
+}
+h2 a:active {
+	color: $hsl_L40;
+}

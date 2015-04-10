@@ -1,0 +1,24 @@
+!!!
+/[if IE 9] <html class="ie9" lang="en">
+<!--[if gt IE 9]><!-->
+%html{:lang => "en"}<>
+	<!--<![endif]-->
+
+	= Haml::Engine.new(File.read("dev/haml/partials/_doc_head.haml")).render
+
+	%body.error_404
+
+		%main{:role => "main"}
+
+			%section
+
+				%article{"data-container" => "width_680"}
+
+					%h1 Error 404
+					:plain
+						<h2>You have stumbled upon a page that does not exist. <a href="http://seedtosausage.ca/" title="Return Home">Go back home.</a></h2>
+
+		%img#bg-image.visuallyhidden{:src => "assets/img/bg_s2s.jpg", :alt => ""}
+
+		= Haml::Engine.new(File.read("dev/haml/partials/_html_loader.haml")).render
+		= Haml::Engine.new(File.read("dev/haml/partials/_doc_scripts.haml")).render

@@ -1,0 +1,53 @@
+!!!
+/[if IE 9] <html class="ie9" lang="en">
+<!--[if gt IE 9]><!-->
+%html{:lang => "en", "data-images" => "waiting", "data-overlay" => ""}<>
+	<!--<![endif]-->
+
+	= Haml::Engine.new(File.read("dev/haml/partials/_doc_head.haml")).render
+
+	%body
+
+		%main{:role => "main"}
+
+			%section
+
+				%article{"data-container" => "width_1170"}
+
+					%h1.visuallyhidden Seed To Sausage
+					%h2.visuallyhidden Artisinal Cured Meats and Gourmet Foods
+
+					%h3.visuallyhidden Sharbot Lake Location
+
+					%h4.visuallyhidden 12821 Hwy 38
+					%h4.visuallyhidden Sharbot Lake, Ontario
+					%h4.visuallyhidden (613) 279.2455
+
+					%h5.visuallyhidden Retail store will re-open on May 16th
+
+					%h3.visuallyhidden Gladstone Location
+
+					%h4.visuallyhidden 729 Gladstone Avenue
+					%h4.visuallyhidden Ottawa, Ontario
+					%h4.visuallyhidden (613) 422-5202
+
+					%h5.visuallyhidden We are located at the corner of Cambridge Street, one block west of Bronson Avenue.
+
+					%h3.visuallyhidden Hours of Operation
+
+					%h4.visuallyhidden Monday to Friday
+					%h5.visuallyhidden 11am &ndash; 7pm
+
+					%h4.visuallyhidden Saturday
+					%h5.visuallyhidden 10am &ndash; 6pm
+
+					%h4.visuallyhidden Sunday
+					%h5.visuallyhidden 10am &ndash; 5pm
+
+					%h6.visuallyhidden Seed to Sausage General Store Copyright 2015
+
+					-# visuallyhidden
+					%img#bg-image{:src => "assets/img/bg_s2s.jpg", :alt => ""}
+
+		= Haml::Engine.new(File.read("dev/haml/partials/_html_loader.haml")).render
+		= Haml::Engine.new(File.read("dev/haml/partials/_doc_scripts.haml")).render
