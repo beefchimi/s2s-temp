@@ -13,13 +13,13 @@ body {
 	position: relative;
 	text-align: center;
 	background-color: $hsl_sand;
-/*
-	background-image: url('../img/bg_s2s.jpg');
+	background-image: url('../img/bg_pig.png');
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
-*/
+	// background-size: contain;
+	// background-size: auto auto;
 }
 ::selection {
 	color: $hsl_L100;
@@ -60,8 +60,22 @@ div.loader_overlay {
 	margin-left: auto;
 	margin-right: auto;
 }
+/*
+[data-container="width_1420"] {
+	max-width: 142rem;
+}
+*/
 [data-container="width_1170"] {
 	max-width: 117rem;
+}
+[data-container="width_790"] {
+	max-width: 79rem;
+}
+[data-container="width_704"] {
+	max-width: 70.4rem;
+}
+[data-container="width_284"] {
+	max-width: 28.4rem;
 }
 // --- SVGs --- \\
 #svgInject {
@@ -126,11 +140,7 @@ html[data-images="loaded"] div.loader_overlay {
 	opacity: 0; // fade to 0 once images are loaded - JS will remove from DOM
 }
 
-
-// ==|== sections =============================================================
-// ============================================================================
-
-// Articles
+// Main
 // ----------------------------------------------------------------------------
 main {
 	display: table;
@@ -143,6 +153,89 @@ section {
 	display: table-cell;
 	vertical-align: middle;
 }
+
+// Header
+// ----------------------------------------------------------------------------
+header {
+	position: relative;
+	margin-bottom: 6rem;
+}
+div.wrap_logo {
+	margin: 0 auto 4rem auto;
+	width: 13.6rem;
+}
+div.wrap_title {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 97rem;
+}
+// --- Social Links --- \\
+ul.social_links {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+ul.social_links li.social_facebook {
+	margin-bottom: 1rem;
+}
+ul.social_links li a {
+	width: 2.8rem;
+	height: 2.8rem;
+}
+ul.social_links li a svg {
+	fill: $hsl_L0;
+}
+ul.social_links li a:hover svg {
+	fill: $hsl_red;
+}
+ul.social_links li a:active svg {
+	fill: darken($hsl_red, 10%);
+}
+// --- Wrap Button --- \\
+a.wrap_button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 6rem;
+}
+a.wrap_button svg.txt_button-bg {
+	fill: $hsl_red;
+}
+a.wrap_button svg.txt_button-txt {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	fill: $hsl_L100;
+}
+a.wrap_button:hover svg.txt_button-bg {
+	fill: $hsl_L0;
+}
+a.wrap_button:active svg.txt_button-bg {
+	fill: $hsl_L20;
+}
+
+// Article
+// ----------------------------------------------------------------------------
+article {
+	margin-bottom: 6rem;
+}
+div.col-1,
+div.col-2,
+div.col-3, {
+	margin-left: auto;
+	margin-right: auto;
+	width: 20rem;
+}
+div.col-1,
+div.col-2 {
+	margin-bottom: 6rem;
+}
+
+// Error 404
+// ----------------------------------------------------------------------------
 h1 {
 	margin-bottom: 2rem;
 	font-size: 3.2rem;

@@ -79,8 +79,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			return;
 		}
 
-		var 	elLoader       = document.getElementById('loader_overlay');
-		// var elPreloadImage = document.getElementById('bg-image');
+		var 	elLoader       = document.getElementById('loader_overlay'),
+			elPreloadImage = document.getElementById('bg-image');
 
 		// listen for the end of <header> fadeIn animation
 		elLoader.addEventListener(transitionEvent, removeLoader);
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 			// remove any unneeded elements
 			elBody.removeChild(elLoader);
-			// elBody.removeChild(elPreloadImage);
+			elPreloadImage.parentNode.removeChild(elPreloadImage);
 
 			// page is now fully ready to go
 			// elHTML.setAttribute('data-page', 'ready');

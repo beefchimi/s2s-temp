@@ -3,17 +3,52 @@
 
 @media only screen and (min-width: 768px) {
 
+	// Main
+	// ----------------------------------------------------------------------------
 	main {
 		padding: 8rem 3.2rem;
 	}
+
+	// Header
+	// ----------------------------------------------------------------------------
 	div.wrap_logo {
-		margin-bottom: 6rem;
-		width: 19.6rem;
-		height: 19.6rem;
+		margin-bottom: 8rem;
 	}
-	div.wrap_main {
-		margin-bottom: 6rem;
+	// --- Social Links --- \\
+	ul.social_links li {
+		display: inline-block;
 	}
+	ul.social_links li.social_facebook {
+		margin-right: 1rem;
+		margin-bottom: 0;
+	}
+	// --- Wrap Button --- \\
+	a.wrap_button {
+		width: 14.4rem;
+	}
+
+	// Article
+	// ----------------------------------------------------------------------------
+	article {
+		margin-bottom: 10rem;
+	}
+	div.col-1,
+	div.col-2,
+	div.col-3, {
+		float: left;
+		margin-left: 0;
+	}
+	div.col-1,
+	div.col-2 {
+		margin-bottom: 0;
+		margin-right: 5.2rem;
+	}
+	div.col-3 {
+		margin-right: 0;
+	}
+
+	// Error 404
+	// ----------------------------------------------------------------------------
 	h1 {
 		font-size: 6rem;
 	}
