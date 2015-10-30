@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		var ajax = new XMLHttpRequest();
 
-		ajax.open('GET', 'assets/img/svg.svg?v=3', true);
+		ajax.open('GET', 'assets/img/svg.svg?v=4', true);
 		ajax.send();
 		ajax.onload = function(e) {
 
